@@ -1,0 +1,223 @@
+@import url( "https://fonts.googleapis.com/css?family=Nunito|Sofia|");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --orange: #ff5f1f;
+    --primary: #fff;
+    --secondary: #191919;
+    --font: rgb(10, 6, 36);
+}
+
+.dark-theme {
+    --primary: #191919;
+    --secondary: #ffffff;
+    --font: #f5f5f5;
+
+}
+
+body {
+    background-color: var(--primary);
+    width: 100%;
+    overflow: hidden;
+    font-family: "Nunito","Sofia",system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    color: var(--font);
+    transition: all .5s ease-in-out;
+}
+
+.blob {
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+    right: 0;
+    z-index: -1;
+    animation: wavein 2s ease-out;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards;
+    width: 110%;
+    overflow-anchor: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+nav li {
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 300ms ease-in;
+
+}
+nav .first{
+    animation: side_up .8s ;
+}
+
+nav .middle{
+    animation: side_up .5s ;
+}
+
+nav .last{
+    animation: side_up .4s ;
+}
+
+nav li:hover {
+    background-color: #ff5f1f;
+    color: #f5f5f5;
+
+}
+
+.logo {
+    width: 100px;
+    object-fit: cover;
+    margin-top: 1px;
+}
+
+#icon {
+    transform: scale(1.5);
+    animation: side_up .8s ;
+
+}
+
+#icon:hover {
+    color: #ff5f1f;
+    transition: all .3s ease-in;
+}
+
+section {
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0rem;
+}
+
+section h3 {
+    font-size: 50px;
+    user-select: none;
+    color: var(--font);
+}
+
+section h4 {
+    user-select: none;
+    font-size: 40px;
+}
+
+#btn {
+    background-color: var(--orange);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 25px;
+    margin-top: 20px;
+    color: var(--font);
+    animation: btn_a .5s;
+}
+
+.bg_boxs {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 1rem;
+    position: absolute;
+    right: 0%;
+    bottom: 20%;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    background-color: #ff5f1f;
+    box-shadow: 1px 5px 10px #ff5f1f;
+}
+
+.mainPic {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
+    list-style: none;
+    gap: 5rem;
+    transform: scale(1.5);
+}
+
+.social_icon:hover {
+    color: var(--primary);
+    transition: all .3s ease-in;
+}
+
+
+@keyframes btn_a {
+    0% {
+        border-radius: 30px;
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(45deg);
+
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        border-radius: 10px;
+        transform: rotate(0);
+    }
+
+
+}
+
+@keyframes wavein {
+
+    0%{
+        transform: translateX(0px);
+    }
+50%{
+    transform: translateX(70px);
+
+}
+    100%{
+        transform: translateX(0px);
+
+    }
+    
+}
+
+@keyframes side_up {
+    0%{
+        transform: translateY(-100px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+
+    }
+    
+}
